@@ -1,0 +1,14 @@
+//
+// Created by daniel on 22-12-21.
+//
+
+#ifndef DATASTRUCTURES_DOUBLELINKEDLIST_H
+#define DATASTRUCTURES_DOUBLELINKEDLIST_H
+
+
+class DoubleLinkedList {
+
+};
+
+
+#endif //DATASTRUCTURES_DOUBLELINKEDLIST_H
