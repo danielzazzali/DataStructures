@@ -55,14 +55,14 @@ public:
     int getKth(int k);
 
     /*
-     * Return true if the element is inside the list
+     * Return true if element is inside the list
      */
     bool contains(int element);
 
     /*
-     * Delete the first element of value x inside the list
+     * Delete the first element of value key inside the list
      */
-    void deleteElement(int x);
+    void deleteElement(int key);
 
     /*
      * Delete all the elements of the list
@@ -72,12 +72,12 @@ public:
     /*
      * Return true if the list is empty
      */
-    bool empty();
+    bool empty() const;
 
     /*
      * Return the number of elements in the list
      */
-    int size();
+    int size() const;
 
     /*
      * Print the list from first to last

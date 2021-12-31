@@ -113,19 +113,27 @@ int LinkedList::getKth(int k) {
 
     int NON_VALID_POSITION = -1;
 
-    if(k >= theSize || k < 0){
+    if(theSize == 0 || k < 0 || k >= theSize){
 
         return NON_VALID_POSITION;
     }
 
     Node* aux = first;
 
-    for(int i = 0; i < k; i++){
+    if(k == 0){
 
-        aux = aux->getNext();
+        return first->getData();
+
+    } else {
+
+        for(int i = 0; i < k; i++){
+
+            aux = aux->getNext();
+        }
+
+        return aux->getData();
     }
 
-    return aux->getData();
 }
 
 bool LinkedList::contains(int element) {
@@ -149,30 +157,41 @@ void LinkedList::deleteElement(int x) {
     Node* current = first;
     Node* previous = nullptr;
 
-    if(current != nullptr && current->getData() == x){
-
-        first = current->getNext();
-        delete current;
+    if(theSize == 0){
         return;
-
-    } else {
-
-        while(current != nullptr && current->getData() != x){
-
-            previous = current;
-            current = current->getNext();
-
-        }
-
-        if(current == nullptr){
-
-            return;
-        }
-
-        previous->setNext(current->getNext());
-        delete current;
     }
 
+    if(first->getData() == x){
+
+        delete first;
+        first = nullptr;
+        last = nullptr;
+        theSize--;
+        return;
+    }
+
+    while(current != nullptr && current->getData() != x){
+
+        previous = current;
+        current = current->getNext();
+    }
+
+    if(current == nullptr){
+
+        return;
+    }
+
+    if(!current->hasNext()){
+
+        previous->setNext(nullptr);
+        delete current;
+        theSize--;
+        return;
+    }
+
+    previous->setNext(current->getNext());
+    delete current;
+    theSize--;
 }
 
 void LinkedList::clear() {
@@ -184,12 +203,12 @@ void LinkedList::clear() {
 
 }
 
-bool LinkedList::empty() {
+bool LinkedList::empty() const {
 
     return theSize == 0;
 }
 
-int LinkedList::size() {
+int LinkedList::size() const {
 
     return theSize;
 }

@@ -27,6 +27,24 @@ int main(){
 
     cout << "Pop back: " << list->popBack() << endl;
 
+    cout << "Contains 3: " << list->contains(3) << endl;
+
+    cout << "deleting 3..." << endl;
+
+    list->deleteElement(3);
+
+    cout << "Contains 3: " << list->contains(3) << endl;
+
+    cout << "Contains 999: " << list->contains(999) << endl;
+
+    cout << "get 5th element: " << list->getKth(5) << endl;
+
+    cout << "get 0th element: " << list->getKth(0) << endl;
+
+    cout << "get 1th element: " << list->getKth(1) << endl;
+
+    cout << "get 20th element: " << list->getKth(20) << endl;
+
     cout << "Size before removal: " << list->size() << endl;
 
     list->print();
@@ -36,6 +54,8 @@ int main(){
     cout << "Size after removal: " << list->size() << endl;
 
     list->print();
+
+    delete list;
 
     return 0;
 }
