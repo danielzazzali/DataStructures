@@ -109,6 +109,72 @@ int LinkedList::popBack() {
 
 }
 
+int LinkedList::getKth(int k) {
+
+    int NON_VALID_POSITION = -1;
+
+    if(k >= theSize || k < 0){
+
+        return NON_VALID_POSITION;
+    }
+
+    Node* aux = first;
+
+    for(int i = 0; i < k; i++){
+
+        aux = aux->getNext();
+    }
+
+    return aux->getData();
+}
+
+bool LinkedList::contains(int element) {
+
+    Node* aux = first;
+
+    while(aux != nullptr){
+
+        if(aux->getData() == element){
+            return true;
+        }
+
+        aux = aux->getNext();
+    }
+
+    return false;
+}
+
+void LinkedList::deleteElement(int x) {
+
+    Node* current = first;
+    Node* previous = nullptr;
+
+    if(current != nullptr && current->getData() == x){
+
+        first = current->getNext();
+        delete current;
+        return;
+
+    } else {
+
+        while(current != nullptr && current->getData() != x){
+
+            previous = current;
+            current = current->getNext();
+
+        }
+
+        if(current == nullptr){
+
+            return;
+        }
+
+        previous->setNext(current->getNext());
+        delete current;
+    }
+
+}
+
 void LinkedList::clear() {
 
     while(!this->empty()){

@@ -19,24 +19,69 @@ private:
 
 public:
 
+    /*
+     * Constructor of linked list
+     */
     LinkedList();
 
+    /*
+     * Destructor of linked list
+     */
     ~LinkedList();
 
+    /*
+     * Push a new element in the front of the list
+     */
     void pushFront(int data);
 
+    /*
+     * Push a new element in the back of the list
+     */
     void pushBack(int data);
 
+    /*
+     * Delete and return the first element of the list
+     */
     int popFront();
 
+    /*
+     * Delete and return the last element of the list
+     */
     int popBack();
 
+    /*
+     * Return the Kth element of the list without deletion
+     */
+    int getKth(int k);
+
+    /*
+     * Return true if the element is inside the list
+     */
+    bool contains(int element);
+
+    /*
+     * Delete the first element of value x inside the list
+     */
+    void deleteElement(int x);
+
+    /*
+     * Delete all the elements of the list
+     */
     void clear();
 
+    /*
+     * Return true if the list is empty
+     */
     bool empty();
 
+    /*
+     * Return the number of elements in the list
+     */
     int size();
 
+    /*
+     * Print the list from first to last
+     */
     void print();
 };
 
