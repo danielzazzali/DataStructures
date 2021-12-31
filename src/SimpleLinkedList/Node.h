@@ -16,7 +16,7 @@ private:
 
 public:
 
-    Node(int data);
+    explicit Node(int data);
 
     ~Node();
 
@@ -31,45 +31,6 @@ public:
     Node* getNext();
 
 };
-
-Node::Node(int data) {
-
-    this->data = data;
-    this->next = nullptr;
-}
-
-Node::~Node(){
-
-    cout << "deleting Node" << endl;
-
-}
-
-
-void Node::setData(int data) {
-
-    this->data = data;
-}
-
-
-void Node::setNext(Node *next) {
-
-    this->next = next;
-}
-
-
-bool Node::hasNext() {
-    return next != nullptr;
-}
-
-
-int Node::getData() {
-    return data;
-}
-
-
-Node *Node::getNext() {
-    return next;
-}
 
 
 #endif //DATASTRUCTURES_NODE_H

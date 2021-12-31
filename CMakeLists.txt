@@ -9,4 +9,8 @@ include_directories(src/SimpleLinkedList)
 add_executable(DataStructures
         src/DoubleLinkedList/DoubleLinkedList.cpp
         src/DoubleLinkedList/DoubleLinkedList.h
-        src/SimpleLinkedList/TestLinkedList.cpp src/SimpleLinkedList/LinkedList.h src/SimpleLinkedList/Node.h)
+        src/SimpleLinkedList/TestLinkedList.cpp
+        src/SimpleLinkedList/LinkedList.h
+        src/SimpleLinkedList/Node.h
+        src/SimpleLinkedList/Node.cpp
+        src/SimpleLinkedList/LinkedList.cpp)
