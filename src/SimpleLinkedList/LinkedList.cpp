@@ -80,33 +80,21 @@ int LinkedList::popBack() {
 
         return EMPTY_POP;
 
-    } else {
-
-        Node* aux = first;
-
-        if(theSize == 1){
-
-            delete first;
-            theSize--;
-            int data = aux->getData();
-            delete aux;
-            return data;
-        }
-
-        while(aux->getNext()->hasNext()){
-
-            aux = aux->getNext();
-        }
-
-        Node* toReturn = last;
-        aux->setNext(nullptr);
-        last = aux;
-        theSize--;
-        int data = toReturn->getData();
-        delete toReturn;
-        return data;
     }
 
+    Node* aux = first;
+
+    while(aux->getNext() != nullptr && aux->getNext()->hasNext()){
+
+        aux = aux->getNext();
+    }
+
+    int data = last->getData();
+    delete last;
+    aux->setNext(nullptr);
+    last = aux;
+    theSize--;
+    return data;
 }
 
 int LinkedList::getKth(int k) {

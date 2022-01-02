@@ -2,10 +2,8 @@
 // Created by Daniel on 30-12-21.
 //
 
-#ifndef DATASTRUCTURES_NODE_H
-#define DATASTRUCTURES_NODE_H
-
-using namespace std;
+#ifndef DATASTRUCTURES_DLNODE_H
+#define DATASTRUCTURES_DLNODE_H
 
 class Node{
 
@@ -33,4 +31,4 @@ public:
 };
 
 
-#endif //DATASTRUCTURES_NODE_H
+#endif //DATASTRUCTURES_DLNODE_H

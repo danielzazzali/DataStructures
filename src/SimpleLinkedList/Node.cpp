@@ -34,7 +34,7 @@ int Node::getData() {
     return data;
 }
 
-Node *Node::getNext() {
+Node* Node::getNext() {
 
     return next;
 }

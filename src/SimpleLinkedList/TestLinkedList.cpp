@@ -49,11 +49,22 @@ int main(){
 
     list->print();
 
-    list->clear();
+    //cout << "Clearing list..." << endl;
+
+    //list->clear();
+
+    //cout << "Size after removal: " << list->size() << endl;
+
+    //ist->print();
+
+    cout << "Testing pop back: " << endl;
+
+    while(!list->empty()){
+
+        cout << list->popBack() << endl;
+    }
 
     cout << "Size after removal: " << list->size() << endl;
-
-    list->print();
 
     delete list;
 
