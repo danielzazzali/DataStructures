@@ -12,9 +12,9 @@ add_executable(DataStructures
         src/SimpleLinkedList/Node.h
         src/SimpleLinkedList/Node.cpp
         src/SimpleLinkedList/LinkedList.cpp
-        src/DoubleLinkedList/DLNode.cpp
-        src/DoubleLinkedList/DLNode.h
-        src/DoubleLinkedList/DoubleLinkedList.cpp
-        src/DoubleLinkedList/DoubleLinkedList.h
-        src/DoubleLinkedList/TestDoubleLinkedList.cpp
+        src/DoublyLinkedList/DLNode.cpp
+        src/DoublyLinkedList/DLNode.h
+        src/DoublyLinkedList/DoublyLinkedList.cpp
+        src/DoublyLinkedList/DoublyLinkedList.h
+        src/DoublyLinkedList/TestDoublyLinkedList.cpp
         )

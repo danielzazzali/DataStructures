@@ -2,12 +2,12 @@
 // Created by Daniel on 02-01-22.
 //
 
-#ifndef DATASTRUCTURES_DOUBLELINKEDLIST_H
-#define DATASTRUCTURES_DOUBLELINKEDLIST_H
+#ifndef DATASTRUCTURES_DOUBLYLINKEDLIST_H
+#define DATASTRUCTURES_DOUBLYLINKEDLIST_H
 
-#include <DLNode.h>
+#include "DLNode.h"
 
-class DoubleLinkedList {
+class DoublyLinkedList {
 
 private:
 
@@ -18,14 +18,14 @@ private:
 public:
 
     /*
-     * Constructor of double linked list
+     * Constructor of doubly linked list
      */
-    DoubleLinkedList();
+    DoublyLinkedList();
 
     /*
-     * Destructor of double linked list
+     * Destructor of doubly linked list
      */
-    ~DoubleLinkedList();
+    ~DoublyLinkedList();
 
     /*
      * Push a new element in the front of the list
@@ -84,4 +84,4 @@ public:
 };
 
 
-#endif //DATASTRUCTURES_DOUBLELINKEDLIST_H
+#endif //DATASTRUCTURES_DOUBLYLINKEDLIST_H

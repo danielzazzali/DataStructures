@@ -2,24 +2,24 @@
 // Created by Daniel on 02-01-22.
 //
 
-#include "DoubleLinkedList.h"
+#include "DoublyLinkedList.h"
 #include <iostream>
 
 using namespace std;
 
-DoubleLinkedList::DoubleLinkedList() {
+DoublyLinkedList::DoublyLinkedList() {
 
     this->first = nullptr;
     this->last = nullptr;
     this->theSize = 0;
 }
 
-DoubleLinkedList::~DoubleLinkedList() {
+DoublyLinkedList::~DoublyLinkedList() {
 
     this->clear();
 }
 
-void DoubleLinkedList::pushFront(int element) {
+void DoublyLinkedList::pushFront(int element) {
 
     DLNode* newNode = new DLNode(element);
 
@@ -39,7 +39,7 @@ void DoubleLinkedList::pushFront(int element) {
 
 }
 
-void DoubleLinkedList::pushBack(int element) {
+void DoublyLinkedList::pushBack(int element) {
 
     DLNode* newNode = new DLNode(element);
 
@@ -60,7 +60,7 @@ void DoubleLinkedList::pushBack(int element) {
 
 }
 
-int DoubleLinkedList::popFront() {
+int DoublyLinkedList::popFront() {
 
     int EMPTY_POP = -1;
 
@@ -88,7 +88,7 @@ int DoubleLinkedList::popFront() {
     return data;
 }
 
-int DoubleLinkedList::popBack() {
+int DoublyLinkedList::popBack() {
 
     int EMPTY_POP = -1;
 
@@ -116,7 +116,7 @@ int DoubleLinkedList::popBack() {
     return data;
 }
 
-int DoubleLinkedList::getKth(int k) {
+int DoublyLinkedList::getKth(int k) {
 
     int NON_VALID_POSITION = -1;
 
@@ -143,7 +143,7 @@ int DoubleLinkedList::getKth(int k) {
 
 }
 
-bool DoubleLinkedList::contains(int key) {
+bool DoublyLinkedList::contains(int key) {
 
     DLNode* aux = first;
 
@@ -159,7 +159,7 @@ bool DoubleLinkedList::contains(int key) {
     return false;
 }
 
-bool DoubleLinkedList::deleteElement(int element) {
+bool DoublyLinkedList::deleteElement(int element) {
 
     if(first != nullptr){
 
@@ -203,7 +203,7 @@ bool DoubleLinkedList::deleteElement(int element) {
     return false;
 }
 
-void DoubleLinkedList::clear() {
+void DoublyLinkedList::clear() {
 
     while(!this->empty()){
 
@@ -212,17 +212,17 @@ void DoubleLinkedList::clear() {
 
 }
 
-bool DoubleLinkedList::empty() const {
+bool DoublyLinkedList::empty() const {
 
     return theSize == 0;
 }
 
-int DoubleLinkedList::size() const {
+int DoublyLinkedList::size() const {
 
     return theSize;
 }
 
-void DoubleLinkedList::print() {
+void DoublyLinkedList::print() {
 
     DLNode* aux = first;
 

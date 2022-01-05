@@ -2,14 +2,14 @@
 // Created by Daniel on 04-01-22.
 //
 
-#include "DoubleLinkedList.h"
+#include "DoublyLinkedList.h"
 #include <iostream>
 
 using namespace std;
 
-int TestDoubleLinkedList(){
+int TestDoublyLinkedList(){
 
-    DoubleLinkedList* list = new DoubleLinkedList();
+    DoublyLinkedList* list = new DoublyLinkedList();
 
     //Push in back
     list->pushBack(5);
