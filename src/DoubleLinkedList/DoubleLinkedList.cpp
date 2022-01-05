@@ -1,5 +1,5 @@
 //
-// Created by daniel on 02-01-22.
+// Created by Daniel on 02-01-22.
 //
 
 #include "DoubleLinkedList.h"
@@ -39,7 +39,7 @@ void DoubleLinkedList::pushFront(int element) {
 
 }
 
-void DoubleLinkedList::PushBack(int element) {
+void DoubleLinkedList::pushBack(int element) {
 
     DLNode* newNode = new DLNode(element);
 
@@ -69,6 +69,16 @@ int DoubleLinkedList::popFront() {
         return EMPTY_POP;
     }
 
+    if(theSize == 1){
+
+        int data = first->getData();
+        theSize--;
+        delete first;
+        last = nullptr;
+        first = nullptr;
+        return data;
+    }
+
     DLNode* aux = first;
     first = first->getNext();
     first->setPrevious(nullptr);
@@ -87,6 +97,16 @@ int DoubleLinkedList::popBack() {
         return EMPTY_POP;
     }
 
+    if(theSize == 1){
+
+        int data = first->getData();
+        theSize--;
+        delete first;
+        last = nullptr;
+        first = nullptr;
+        return data;
+    }
+
     DLNode* aux = last;
     last = last->getPrevious();
     last->setNext(nullptr);
@@ -96,18 +116,91 @@ int DoubleLinkedList::popBack() {
     return data;
 }
 
-//TODO getKth, contains, deleteElement.
-
 int DoubleLinkedList::getKth(int k) {
-    return 0;
+
+    int NON_VALID_POSITION = -1;
+
+    if(theSize == 0 || k < 0 || k >= theSize){
+
+        return NON_VALID_POSITION;
+    }
+
+    DLNode* aux = first;
+
+    if(k == 0){
+
+        return first->getData();
+
+    } else {
+
+        for(int i = 0; i < k; i++){
+
+            aux = aux->getNext();
+        }
+
+        return aux->getData();
+    }
+
 }
 
 bool DoubleLinkedList::contains(int key) {
+
+    DLNode* aux = first;
+
+    while(aux != nullptr){
+
+        if(aux->getData() == key){
+            return true;
+        }
+
+        aux = aux->getNext();
+    }
+
     return false;
 }
 
-void DoubleLinkedList::deleteElement(int element) {
+bool DoubleLinkedList::deleteElement(int element) {
 
+    if(first != nullptr){
+
+        DLNode* current = first;
+
+        while(current != nullptr && current->getData() != element){
+
+            current = current->getNext();
+        }
+
+        if(current == nullptr){
+
+            return false;
+        }
+
+        if(current->getPrevious() == nullptr){
+
+            first = first->getNext();
+            theSize--;
+            delete current;
+            return true;
+
+        } else if(current->getNext() == nullptr){
+
+            last = current->getPrevious();
+            current->getPrevious()->setNext(current->getNext());
+            theSize--;
+            delete current;
+            return true;
+
+        } else {
+
+            current->getPrevious()->setNext(current->getNext());
+            theSize--;
+            delete current;
+            return true;
+        }
+
+    }
+
+    return false;
 }
 
 void DoubleLinkedList::clear() {
@@ -116,6 +209,7 @@ void DoubleLinkedList::clear() {
 
         this->popFront();
     }
+
 }
 
 bool DoubleLinkedList::empty() const {

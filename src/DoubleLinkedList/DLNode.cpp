@@ -1,5 +1,5 @@
 //
-// Created by daniel on 02-01-22.
+// Created by Daniel on 02-01-22.
 //
 
 #include "DLNode.h"

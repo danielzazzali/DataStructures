@@ -60,9 +60,9 @@ public:
     bool contains(int element);
 
     /*
-     * Delete the first element of value key inside the list
+     * Delete the first element of value key inside the list, return true if successful
      */
-    void deleteElement(int key);
+    bool deleteElement(int key);
 
     /*
      * Delete all the elements of the list

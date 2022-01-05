@@ -1,5 +1,5 @@
 //
-// Created by daniel on 31-12-21.
+// Created by Daniel on 31-12-21.
 //
 
 #include <LinkedList.h>
@@ -140,46 +140,49 @@ bool LinkedList::contains(int element) {
     return false;
 }
 
-void LinkedList::deleteElement(int x) {
+bool LinkedList::deleteElement(int x) {
 
-    Node* current = first;
-    Node* previous = nullptr;
+    if(first != nullptr){
 
-    if(theSize == 0){
-        return;
+        Node* current = first;
+        Node* previous = nullptr;
+
+        while (current != nullptr && current->getData() != x){
+
+            previous = current;
+            current = current->getNext();
+        }
+
+        if(current == nullptr){
+
+            return false;
+
+        } else if(previous == nullptr){
+
+            first = first->getNext();
+            theSize--;
+            delete current;
+            return true;
+
+        } else if(current->getNext() == nullptr){
+
+            last = previous;
+            previous->setNext(current->getNext());
+            theSize--;
+            delete current;
+            return true;
+
+        } else {
+
+            previous->setNext(current->getNext());
+            theSize--;
+            delete current;
+            return true;
+        }
+
     }
 
-    if(first->getData() == x){
-
-        delete first;
-        first = nullptr;
-        last = nullptr;
-        theSize--;
-        return;
-    }
-
-    while(current != nullptr && current->getData() != x){
-
-        previous = current;
-        current = current->getNext();
-    }
-
-    if(current == nullptr){
-
-        return;
-    }
-
-    if(!current->hasNext()){
-
-        previous->setNext(nullptr);
-        delete current;
-        theSize--;
-        return;
-    }
-
-    previous->setNext(current->getNext());
-    delete current;
-    theSize--;
+    return false;
 }
 
 void LinkedList::clear() {

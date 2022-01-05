@@ -1,5 +1,5 @@
 //
-// Created by daniel on 31-12-21.
+// Created by Daniel on 31-12-21.
 //
 
 #include <Node.h>

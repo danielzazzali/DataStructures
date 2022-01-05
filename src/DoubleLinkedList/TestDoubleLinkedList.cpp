@@ -1,15 +1,15 @@
 //
-// Created by Daniel on 30-12-21.
+// Created by Daniel on 04-01-22.
 //
 
+#include "DoubleLinkedList.h"
 #include <iostream>
-#include "LinkedList.h"
 
-int TestLinkedList(){
+using namespace std;
 
-    cout << "Testing Linked List" << endl;
+int TestDoubleLinkedList(){
 
-    LinkedList* list = new LinkedList();
+    DoubleLinkedList* list = new DoubleLinkedList();
 
     //Push in back
     list->pushBack(5);
@@ -37,7 +37,7 @@ int TestLinkedList(){
 
     cout << "Contains 999: " << list->contains(999) << endl;
 
-    cout << "get 5th element: " << list->getKth(5) << endl;
+    cout << "get 4th element: " << list->getKth(4) << endl;
 
     cout << "get 0th element: " << list->getKth(0) << endl;
 
