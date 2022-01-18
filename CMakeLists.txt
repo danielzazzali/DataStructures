@@ -17,4 +17,4 @@ add_executable(DataStructures
         src/DoublyLinkedList/DoublyLinkedList.cpp
         src/DoublyLinkedList/DoublyLinkedList.h
         src/DoublyLinkedList/TestDoublyLinkedList.cpp
-        )
+        src/CircularLinkedList/CircularLinkedList.cpp src/CircularLinkedList/CircularLinkedList.h src/CircularLinkedList/CNode.cpp src/CircularLinkedList/CNode.h)
