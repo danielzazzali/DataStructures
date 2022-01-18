@@ -5,7 +5,7 @@
 
 ## Soon:
 
-* Array
+* Circular Linked List
 * Stacks
 * Queues
 * Hash Tables
