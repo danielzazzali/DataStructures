@@ -29,15 +29,27 @@ int TestDoublyLinkedList(){
 
     cout << "Contains 3: " << list->contains(3) << endl;
 
-    cout << "deleting 3..." << endl;
-
-    list->deleteElement(3);
+    cout << "deleting 3: " << list->deleteElement(3) << endl;
 
     cout << "Contains 3: " << list->contains(3) << endl;
 
     cout << "Contains 999: " << list->contains(999) << endl;
 
-    cout << "get 4th element: " << list->getKth(4) << endl;
+    cout << "deleting 999: " << list->deleteElement(999) << endl;
+
+    cout << "Contains 7: " << list->contains(7) << endl;
+
+    cout << "deleting 7: " << list->deleteElement(7) << endl;
+
+    cout << "Contains 7: " << list->contains(7) << endl;
+
+    cout << "Contains 5: " << list->contains(5) << endl;
+
+    cout << "deleting 5: " << list->deleteElement(5) << endl;
+
+    cout << "Contains 5: " << list->contains(5) << endl;
+
+    cout << "get 2th element: " << list->getKth(2) << endl;
 
     cout << "get 0th element: " << list->getKth(0) << endl;
 

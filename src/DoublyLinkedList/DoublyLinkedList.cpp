@@ -224,6 +224,11 @@ int DoublyLinkedList::size() const {
 
 void DoublyLinkedList::print() {
 
+    if(this->empty()){
+
+        return;
+    }
+
     DLNode* aux = first;
 
     while(aux != nullptr){
