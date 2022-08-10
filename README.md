@@ -4,7 +4,6 @@
 * Double Linked List
 * Circular Linked List
 
-## Soon:
 
 * Stacks
 * Queues
